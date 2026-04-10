@@ -27,3 +27,18 @@ print(train_data.head())
 print(df.columns.tolist())
 print(df.shape)
 print(df['Patient_Status'].value_counts())
+
+# Calculate survival time in days
+df['Date_of_Surgery'] = pd.to_datetime(df['Date_of_Surgery'], format='%d-%b-%y')
+df['Date_of_Last_Visit'] = pd.to_datetime(df['Date_of_Last_Visit'], format='%d-%b-%y')
+df['Survival_Days'] = (df['Date_of_Last_Visit'] - df['Date_of_Surgery']).dt.days
+
+# Create the event indicator (True = died, False = still alive/censored)
+df['Event'] = df['Patient_Status'] == 'Dead'
+
+# Drop rows with missing survival time
+df = df.dropna(subset=['Survival_Days'])
+print(f"Patients remaining: {len(df)}")
+
+print(df[['Survival_Days', 'Event']].head(10))
+print(df['Event'].value_counts())
