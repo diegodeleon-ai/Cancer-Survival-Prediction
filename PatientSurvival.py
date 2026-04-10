@@ -15,4 +15,15 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_absolute_error
 
+#Load the training data
+train_data = pd.read_csv('data/breast_cancer_survival.csv')
+df = pd.read_csv('data/breast_cancer_survival.csv')
 
+
+#Display first 5 rows
+print(train_data.head())
+
+#See all columns and patient status
+print(df.columns.tolist())
+print(df.shape)
+print(df['Patient_Status'].value_counts())
