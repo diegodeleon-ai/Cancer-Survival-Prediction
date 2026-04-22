@@ -40,5 +40,38 @@ df['Event'] = df['Patient_Status'] == 'Dead'
 df = df.dropna(subset=['Survival_Days'])
 print(f"Patients remaining: {len(df)}")
 
-print(df[['Survival_Days', 'Event']].head(10))
-print(df['Event'].value_counts())
+#Encode categorical values with numbers
+df['Gender'] = df['Gender'].map({'FEMALE': 0, 'MALE': 1})
+df['Tumour_Stage'] = df['Tumour_Stage'].map({'STAGE I': 1, 'STAGE II': 2, 'STAGE III': 3})
+df['ER status'] = df['ER status'].map({'Negative': 0, 'Positive': 1})
+df['PR status'] = df['PR status'].map({'Positive': 1, 'Negative': 0})
+df['HER2 status'] = df['HER2 status'].map({'Positive': 1, 'Negative': 0})
+
+# One-hot encode Histology and Surgery_type
+df = pd.get_dummies(df, columns=['Histology', 'Surgery_type'])
+
+print(df.columns.tolist())
+print(df.head())
+
+# Define features
+feature_cols = ['Age', 'Gender', 'Protein1', 'Protein2', 'Protein3', 'Protein4',
+                'Tumour_Stage', 'ER status', 'PR status', 'HER2 status',
+                'Histology_Infiltrating Ductal Carcinoma',
+                'Histology_Infiltrating Lobular Carcinoma',
+                'Histology_Mucinous Carcinoma',
+                'Surgery_type_Lumpectomy',
+                'Surgery_type_Modified Radical Mastectomy',
+                'Surgery_type_Other',
+                'Surgery_type_Simple Mastectomy']
+
+X = df[feature_cols]
+y = df['Survival_Days']
+
+# Split into train and test
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+print(f"Training patients: {len(X_train)}")
+print(f"Test patients: {len(X_test)}")
+
+
