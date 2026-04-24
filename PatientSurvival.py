@@ -74,4 +74,17 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 print(f"Training patients: {len(X_train)}")
 print(f"Test patients: {len(X_test)}")
 
+#Train the model
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.metrics import mean_absolute_error
+
+model = RandomForestRegressor(n_estimators=100, random_state=42)
+model.fit(X_train, y_train)
+
+#Test the model
+predictions = model.predict(X_test)
+mae = mean_absolute_error(y_test,predictions)
+print(f"Mean Absolute Error: {mae:.1f} days")
+print(f"That's roughly {mae/30:.1f} months off on average")
+
 
