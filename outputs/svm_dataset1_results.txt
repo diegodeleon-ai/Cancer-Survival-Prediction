@@ -1,0 +1,28 @@
+
+==============================
+SVM WITHOUT KERNEL (Linear)
+==============================
+Accuracy:  0.797
+Precision: 0.000
+Recall:    0.000
+
+Confusion Matrix:
+[[51  0]
+ [13  0]]
+Correct Alive: 51 | False Alarms: 0
+Missed Dead:   13 | Correct Dead: 0
+
+==============================
+SVM WITH KERNEL (RBF)
+==============================
+Accuracy:  0.797
+Precision: 0.000
+Recall:    0.000
+
+Confusion Matrix:
+[[51  0]
+ [13  0]]
+Correct Alive: 51 | False Alarms: 0
+Missed Dead:   13 | Correct Dead: 0
+
+Done! Focus on Recall — higher = better at catching high-risk patients.
