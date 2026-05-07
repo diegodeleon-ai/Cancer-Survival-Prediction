@@ -29,9 +29,6 @@ X_train, X_test, y_train, y_test = load_dataset2()
 # =============================================================
 # XGBOOST REGRESSOR
 # Predicts survival time in days
-# TODO: Run and record R2 and RMSE
-# TODO: Try changing n_estimators to 50 or 200 — does R2 improve?
-# TODO: Try adding learning_rate=0.01 or 0.3 — what changes?
 # =============================================================
 xgb = XGBRegressor(
     n_estimators=50,    #fewer trees to prevent overfitting on small dataset
