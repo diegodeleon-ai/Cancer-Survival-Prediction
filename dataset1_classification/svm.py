@@ -41,7 +41,7 @@ def evaluate(name, y_test, preds):
 # TODO: Run this and note the Recall score
 # TODO: Try changing C=1 to C=0.1 or C=10 — does Recall improve?
 # =============================================================
-svm_linear = SVC(kernel='linear', C=1, random_state=42)
+svm_linear = SVC(kernel='linear', C=1, class_weight = 'balanced', random_state=42)
 svm_linear.fit(X_train, y_train)
 preds_linear = svm_linear.predict(X_test)
 evaluate("SVM WITHOUT KERNEL (Linear)", y_test, preds_linear)
@@ -52,10 +52,15 @@ evaluate("SVM WITHOUT KERNEL (Linear)", y_test, preds_linear)
 # TODO: Compare Recall here vs linear above
 # TODO: Try changing C= and gamma= values to tune performance
 # =============================================================
-svm_rbf = SVC(kernel='rbf', C=1, gamma='scale', random_state=42)
+svm_rbf = SVC(kernel='rbf', C=1, gamma='scale', class_weight = 'balanced', random_state=42)
 svm_rbf.fit(X_train, y_train)
 preds_rbf = svm_rbf.predict(X_test)
 evaluate("SVM WITH KERNEL (RBF)", y_test, preds_rbf)
 
-# TODO: Add a comment here — which SVM performed better and why?
-print("\nDone! Focus on Recall — higher = better at catching high-risk patients.")
+# # RESULTS SUMMARY:
+# Linear SVM: Recall=0.692, catches 9/13 dead patients, 28 false alarms
+# RBF SVM:    Recall=0.846, catches 11/13 dead patients, 36 false alarms
+# Conclusion: RBF outperforms linear for detecting high-risk patients
+# Tradeoff: higher recall comes with more false alarms
+# In clinical settings, higher recall is preferred — missing a dying
+# patient is worse than a false alarm

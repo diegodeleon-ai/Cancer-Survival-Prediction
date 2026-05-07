@@ -54,4 +54,3 @@ preds_rbf = svr_rbf.predict(X_test)
 evaluate("SVR WITH KERNEL (RBF)", y_test, preds_rbf)
 
 # TODO: Add a comment here — which kernel worked better and why?
-print("\nDone! Higher R2 = better. Compare with xgboost_model.py results.")
