@@ -1,0 +1,28 @@
+   Age  Gender  Protein1  ...  Date_of_Surgery  Date_of_Last_Visit  Patient_Status
+0   42  FEMALE   0.95256  ...        20-May-18           26-Aug-18           Alive
+1   54  FEMALE   0.00000  ...        26-Apr-18           25-Jan-19            Dead
+2   63  FEMALE  -0.52303  ...        24-Aug-18           08-Apr-20           Alive
+3   78  FEMALE  -0.87618  ...        16-Nov-18           28-Jul-20           Alive
+4   42  FEMALE   0.22611  ...        12-Dec-18           05-Jan-19           Alive
+
+[5 rows x 15 columns]
+['Age', 'Gender', 'Protein1', 'Protein2', 'Protein3', 'Protein4', 'Tumour_Stage', 'Histology', 'ER status', 'PR status', 'HER2 status', 'Surgery_type', 'Date_of_Surgery', 'Date_of_Last_Visit', 'Patient_Status']
+(334, 15)
+Patient_Status
+Alive    255
+Dead      66
+Name: count, dtype: int64
+Patients remaining: 317
+['Age', 'Gender', 'Protein1', 'Protein2', 'Protein3', 'Protein4', 'Tumour_Stage', 'ER status', 'PR status', 'HER2 status', 'Date_of_Surgery', 'Date_of_Last_Visit', 'Patient_Status', 'Survival_Days', 'Event', 'Histology_Infiltrating Ductal Carcinoma', 'Histology_Infiltrating Lobular Carcinoma', 'Histology_Mucinous Carcinoma', 'Surgery_type_Lumpectomy', 'Surgery_type_Modified Radical Mastectomy', 'Surgery_type_Other', 'Surgery_type_Simple Mastectomy']
+   Age  Gender  ...  Surgery_type_Other  Surgery_type_Simple Mastectomy
+0   42       0  ...                True                           False
+1   54       0  ...                True                           False
+2   63       0  ...               False                           False
+3   78       0  ...                True                           False
+4   42       0  ...               False                           False
+
+[5 rows x 22 columns]
+Training patients: 253
+Test patients: 64
+Mean Absolute Error: 218.5 days
+That's roughly 7.3 months off on average
