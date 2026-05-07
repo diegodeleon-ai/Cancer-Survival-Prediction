@@ -1,0 +1,18 @@
+
+==============================
+XGBOOST REGRESSOR
+==============================
+R2 Score: -0.154
+RMSE:     458.6 days
+R2 closer to 1.0 = better | RMSE = avg days off
+
+==============================
+FEATURE IMPORTANCE
+==============================
+NEOADJUVANT         0.257905
+BREASTFEED          0.220565
+DETECTION           0.217164
+AGE OF PATIENTS     0.199308
+AGE AT MENARACHE    0.105058
+CONTRACEPT          0.000000
+dtype: float32
