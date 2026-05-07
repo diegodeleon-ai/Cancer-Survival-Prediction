@@ -1,0 +1,26 @@
+
+==============================
+SVM WITHOUT KERNEL (Linear)
+==============================
+Accuracy:  0.500
+Precision: 0.229
+Recall:    0.615
+
+Confusion Matrix:
+[[24 27]
+ [ 5  8]]
+Correct Alive: 24 | False Alarms: 27
+Missed Dead:   5 | Correct Dead: 8
+
+==============================
+SVM WITH KERNEL (RBF)
+==============================
+Accuracy:  0.578
+Precision: 0.111
+Recall:    0.154
+
+Confusion Matrix:
+[[35 16]
+ [11  2]]
+Correct Alive: 35 | False Alarms: 16
+Missed Dead:   11 | Correct Dead: 2
