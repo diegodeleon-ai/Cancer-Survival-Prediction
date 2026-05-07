@@ -34,7 +34,9 @@ X_train, X_test, y_train, y_test = load_dataset2()
 # TODO: Try adding learning_rate=0.01 or 0.3 — what changes?
 # =============================================================
 xgb = XGBRegressor(
-    n_estimators=100,
+    n_estimators=50,    #fewer trees to prevent overfitting on small dataset
+    max_depth = 2,      #shallower trees make model simpler
+    learning_rate = 0.1,  #default lr
     random_state=42,
     eval_metric='rmse'
 )
