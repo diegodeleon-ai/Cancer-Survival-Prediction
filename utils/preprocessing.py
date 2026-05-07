@@ -3,8 +3,8 @@
 # Shared preprocessing functions for both datasets
 # Used by all team members — do not modify without discussing
 #
-# TODO (Diego): Verify Tumour_Stage unique values match mapping
-# TODO (All): If you add a new feature, add it to feature_cols
+# 
+# NOTE (All): If you add a new feature, add it to feature_cols
 #             and update both load functions accordingly
 # =============================================================
 
