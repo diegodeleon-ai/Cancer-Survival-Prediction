@@ -1,0 +1,71 @@
+
+==============================
+SVM WITHOUT KERNEL (Linear)
+==============================
+Accuracy:  0.500
+Precision: 0.229
+Recall:    0.615
+
+Confusion Matrix:
+[[24 27]
+ [ 5  8]]
+Correct Alive: 24 | False Alarms: 27
+Missed Dead:   5 | Correct Dead: 8
+
+==============================
+SVM WITH KERNEL (RBF)
+==============================
+Accuracy:  0.203
+Precision: 0.203
+Recall:    1.000
+
+Confusion Matrix:
+[[ 0 51]
+ [ 0 13]]
+Correct Alive: 0 | False Alarms: 51
+Missed Dead:   0 | Correct Dead: 13
+
+Threshold 0.1:
+Accuracy:  0.203
+Recall:    1.000
+Confusion Matrix:
+[[ 0 51]
+ [ 0 13]]
+Correct Alive: 0 | False Alarms: 51
+Missed Dead:   0 | Correct Dead: 13
+
+Threshold 0.2:
+Accuracy:  0.750
+Recall:    0.077
+Confusion Matrix:
+[[47  4]
+ [12  1]]
+Correct Alive: 47 | False Alarms: 4
+Missed Dead:   12 | Correct Dead: 1
+
+Threshold 0.3:
+Accuracy:  0.797
+Recall:    0.000
+Confusion Matrix:
+[[51  0]
+ [13  0]]
+Correct Alive: 51 | False Alarms: 0
+Missed Dead:   13 | Correct Dead: 0
+
+Threshold 0.4:
+Accuracy:  0.797
+Recall:    0.000
+Confusion Matrix:
+[[51  0]
+ [13  0]]
+Correct Alive: 51 | False Alarms: 0
+Missed Dead:   13 | Correct Dead: 0
+
+Threshold 0.5:
+Accuracy:  0.797
+Recall:    0.000
+Confusion Matrix:
+[[51  0]
+ [13  0]]
+Correct Alive: 51 | False Alarms: 0
+Missed Dead:   13 | Correct Dead: 0

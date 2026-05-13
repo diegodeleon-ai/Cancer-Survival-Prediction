@@ -3,9 +3,6 @@
 # TEAM MEMBER: Diego
 # DATASET: breast_cancer_survival.csv
 # TASK: Classification — predict Dead (1) vs Alive (0)
-#
-# HOW TO RUN:
-#   python dataset1_classification/svm.py
 # =============================================================
 
 import sys
@@ -38,10 +35,8 @@ def evaluate(name, y_test, preds):
 # =============================================================
 # SVM WITHOUT KERNEL (Linear)
 # A straight line separates alive vs dead patients
-# TODO: Run this and note the Recall score
-# TODO: Try changing C=1 to C=0.1 or C=10 — does Recall improve?
 # =============================================================
-svm_linear = SVC(kernel='linear', C=.10, class_weight = 'balanced', random_state=42)
+svm_linear = SVC(kernel='linear', C=1, class_weight='balanced', random_state=42)
 svm_linear.fit(X_train, y_train)
 preds_linear = svm_linear.predict(X_test)
 evaluate("SVM WITHOUT KERNEL (Linear)", y_test, preds_linear)
@@ -49,15 +44,13 @@ evaluate("SVM WITHOUT KERNEL (Linear)", y_test, preds_linear)
 # =============================================================
 # SVM WITH KERNEL (RBF)
 # Uses a curved boundary — usually better on real-world data
-# TODO: Compare Recall here vs linear above
-# TODO: Try changing C= and gamma= values to tune performance
 # =============================================================
-svm_rbf = SVC(kernel='rbf', C=.05, gamma='scale', class_weight = 'balanced', random_state=42)
+svm_rbf = SVC(kernel='rbf', C=1, gamma='scale', class_weight='balanced', random_state=42)
 svm_rbf.fit(X_train, y_train)
 preds_rbf = svm_rbf.predict(X_test)
 evaluate("SVM WITH KERNEL (RBF)", y_test, preds_rbf)
 
-# # RESULTS SUMMARY:
+# RESULTS SUMMARY:
 # Linear SVM: Recall=0.692, catches 9/13 dead patients, 28 false alarms
 # RBF SVM:    Recall=0.846, catches 11/13 dead patients, 36 false alarms
 # Conclusion: RBF outperforms linear for detecting high-risk patients
