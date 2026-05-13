@@ -26,12 +26,9 @@ X_train, X_test, y_train, y_test = load_dataset2()
 # Predicts survival time in days
 # =============================================================
 xgb = XGBRegressor(
-    n_estimators=200,    #more trees to make up for slower learning rate
-    max_depth = 2,      #shallower trees make model simpler
-    learning_rate = 0.01,  #smaller lr
-    reg_alpha = 0.1,   #L1 penalty
-    reg_lambda = 1.0,  #L2 penalty
-    subsample = 0.8,
+    n_estimators=50,
+    max_depth=2,
+    learning_rate=0.05,
     random_state=42,
     eval_metric='rmse'
 )
