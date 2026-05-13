@@ -3,12 +3,7 @@
 # TEAM MEMBER: Diego
 # DATASET: mendeley_cancer_survival.csv
 # TASK: Regression — predict survival time in days
-#
-# HOW TO RUN:
-#   python dataset2_regression/xgboost_model.py
-#
-# INSTALL IF NEEDED:
-#   pip install xgboost
+# 
 #
 # NOTE: StandardScaler is already applied in preprocessing.py
 # =============================================================
@@ -29,9 +24,6 @@ X_train, X_test, y_train, y_test = load_dataset2()
 # =============================================================
 # XGBOOST REGRESSOR
 # Predicts survival time in days
-# TODO: Run and record R2 and RMSE
-# TODO: Try changing n_estimators to 50 or 200 — does R2 improve?
-# TODO: Try adding learning_rate=0.01 or 0.3 — what changes?
 # =============================================================
 xgb = XGBRegressor(
     n_estimators=50,    #fewer trees to prevent overfitting on small dataset
@@ -52,8 +44,7 @@ print("R2 closer to 1.0 = better | RMSE = avg days off")
 
 # =============================================================
 # FEATURE IMPORTANCE
-# TODO: Compare with Linear Regression coefficients above
-#       Do both models agree on which features matter most?
+# 
 # =============================================================
 feature_names = ['AGE OF PATIENTS', 'AGE AT MENARACHE', 'BREASTFEED',
                  'CONTRACEPT', 'DETECTION', 'NEOADJUVANT']
@@ -65,4 +56,4 @@ print("FEATURE IMPORTANCE")
 print("==============================")
 print(importance)
 
-# TODO: Add a comment — how does XGBoost compare to SVR and Linear Regression?
+# 
