@@ -24,5 +24,3 @@ Confusion Matrix:
  [13  0]]
 Correct Alive: 51 | False Alarms: 0
 Missed Dead:   13 | Correct Dead: 0
-
-Done! Focus on Recall — higher = better at catching high-risk patients.
