@@ -1,0 +1,18 @@
+
+==============================
+LINEAR REGRESSION
+==============================
+R2 Score: -0.338
+RMSE:     493.8 days
+R2 closer to 1.0 = better | RMSE = avg days off
+
+==============================
+FEATURE IMPORTANCE (Coefficients)
+==============================
+DETECTION           194.066647
+NEOADJUVANT          94.477872
+CONTRACEPT           71.252425
+BREASTFEED           55.336329
+AGE OF PATIENTS      51.423281
+AGE AT MENARACHE     31.048263
+dtype: float64

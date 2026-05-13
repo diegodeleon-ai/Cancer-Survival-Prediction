@@ -1,0 +1,14 @@
+
+==============================
+SVR WITHOUT KERNEL (Linear)
+==============================
+R2 Score: -0.164
+RMSE:     460.7 days
+R2 closer to 1.0 = better | RMSE = avg days off
+
+==============================
+SVR WITH KERNEL (RBF)
+==============================
+R2 Score: -0.165
+RMSE:     460.8 days
+R2 closer to 1.0 = better | RMSE = avg days off
